@@ -41,16 +41,15 @@ func isPalindrome(s string) bool {
 	return true
 }
 
-func recogniseCreators(name string, greetingStr string) string {
-	// Exercise 1 & 3
+func isCreator(name string) bool {
 	creators := []string{"Robert Griesemer", "Rob Pike", "Ken Thompson"}
 
 	for _, creator := range creators {
 		if name == creator {
-			greetingStr += " Thanks for creating me!"
+			return true
 		}
 	}
-	return greetingStr
+	return false
 }
 
 func greeting(name string) string {
@@ -58,7 +57,9 @@ func greeting(name string) string {
 	firstName := strings.Split(name, " ")[0]
 	greetingStr := "Hello, " + firstName + "."
 
-	greetingStr = recogniseCreators(name, greetingStr)
+	if isCreator(name) {
+		greetingStr += " Thanks for creating me!"
+	}
 
 	// Exercise 2
 	if len(firstName) > 20 {
