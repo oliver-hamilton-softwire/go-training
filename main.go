@@ -37,12 +37,12 @@ func greeting(name string) string {
 	// Exercise 4
 	splitString := strings.Split(name, " ")
 	firstName := splitString[0]
-	greetingStr := "Hello, " + firstName
+	greetingStr := "Hello, " + firstName + "."
 	creators := []string{"Robert Griesemer", "Rob Pike", "Ken Thompson"}
 	// Exercise 1 & 3
 	for _, creator := range creators {
 		if name == creator {
-			greetingStr += ". Thanks for creating me!"
+			greetingStr += " Thanks for creating me!"
 		}
 	}
 	// Exercise 2
@@ -52,7 +52,7 @@ func greeting(name string) string {
 
 	// Exercise 5
 	if isPalindrome(name) {
-		greetingStr += ". Cool, a palindromic name!"
+		greetingStr += " Cool, a palindromic name!"
 	}
 	return greetingStr
 }
