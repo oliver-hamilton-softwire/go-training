@@ -15,13 +15,13 @@ func getName() string {
 
 func main() {
 	name := getName()
-	greetingStr := greeting(name)
-	if name == "Robert Griesemer" {
-		greetingStr += ". Thanks for creating me!"
-	}
-	fmt.Println(greetingStr)
+	fmt.Println(greeting(name))
 }
 
 func greeting(name string) string {
-	return "Hello, " + name
+	greetingStr := "Hello, " + name
+	if name == "Robert Griesemer" {
+		greetingStr += ". Thanks for creating me!"
+	}
+	return greetingStr
 }
