@@ -20,6 +20,7 @@ func main() {
 }
 
 func getOutput(name string) string {
+	// Exercise 6
 	if name == "" {
 		return "Ok, no greeting for you"
 	}
