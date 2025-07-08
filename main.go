@@ -19,14 +19,14 @@ func main() {
 }
 
 func greeting(name string) string {
-	greetingStr := "Hello, " + name[:20]
+	greetingStr := "Hello, " + name
 	// Exercise 1
 	if name == "Robert Griesemer" {
 		greetingStr += ". Thanks for creating me!"
 	}
 	// Exercise 2
 	if len(name) > 20 {
-		greetingStr += "... Wow, that name's too long for me!"
+		greetingStr = "Hello, " + name[:20] + "... Wow, that name's too long for me!"
 	}
 	return greetingStr
 }
