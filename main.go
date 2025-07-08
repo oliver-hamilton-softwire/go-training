@@ -19,6 +19,20 @@ func main() {
 	fmt.Println(greeting(name))
 }
 
+func isPalindrome(s string) bool {
+	i := 0
+	j := len(s) - 1
+	// Check that the characters at opposite ends of the string match
+	for i < j {
+		if s[i] != s[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+
 func greeting(name string) string {
 	// Exercise 4
 	splitString := strings.Split(name, " ")
@@ -34,6 +48,11 @@ func greeting(name string) string {
 	// Exercise 2
 	if len(firstName) > 20 {
 		greetingStr = "Hello, " + firstName[:20] + "... Wow, that name's too long for me!"
+	}
+
+	// Exercise 5
+	if isPalindrome(name) {
+		greetingStr += ". Cool, a palindromic name!"
 	}
 	return greetingStr
 }
