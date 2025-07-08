@@ -2,10 +2,12 @@ package main
 
 import "testing"
 
-var greetingTests = []struct {
+type Test struct {
 	name     string
 	expected string
-}{
+}
+
+var greetingTests = []Test{
 	{"Alice", "Hello, Alice."},
 	{"Bob", "Hello, Bob."},
 	{"Robert Griesemer", "Hello, Robert. Thanks for creating me!"},
@@ -17,10 +19,7 @@ var greetingTests = []struct {
 	{"ababababababababababa", "Hello, abababababababababab... Wow, that name's too long for me! Cool, a palindromic name!"},
 }
 
-var outputTests = []struct {
-	name     string
-	expected string
-}{
+var outputTests = []Test{
 	{"", "Ok, no greeting for you"},
 	{"Alice", "Hello, Alice."},
 }
