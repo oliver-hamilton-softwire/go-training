@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-var tests = []struct {
+var greetingTests = []struct {
 	name     string
 	expected string
 }{
@@ -17,11 +17,28 @@ var tests = []struct {
 	{"ababababababababababa", "Hello, abababababababababab... Wow, that name's too long for me! Cool, a palindromic name!"},
 }
 
+var outputTests = []struct {
+	name     string
+	expected string
+}{
+	{"", "Ok, no greeting for you"},
+	{"Alice", "Hello, Alice."},
+}
+
 func TestGreeting(t *testing.T) {
-	for _, test := range tests {
+	for _, test := range greetingTests {
 		result := greeting(test.name)
 		if result != test.expected {
 			t.Errorf("incorrect greeting, for name %s got: %s expected: %s", test.name, result, test.expected)
+		}
+	}
+}
+
+func TestGetOutput(t *testing.T) {
+	for _, test := range outputTests {
+		result := getOutput(test.name)
+		if result != test.expected {
+			t.Errorf("incorrect output, for name %s got: %s expected: %s", test.name, result, test.expected)
 		}
 	}
 }

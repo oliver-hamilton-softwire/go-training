@@ -16,7 +16,14 @@ func getName() string {
 
 func main() {
 	name := getName()
-	fmt.Println(greeting(name))
+	fmt.Println(getOutput(name))
+}
+
+func getOutput(name string) string {
+	if name == "" {
+		return "Ok, no greeting for you"
+	}
+	return greeting(name)
 }
 
 func isPalindrome(s string) bool {
