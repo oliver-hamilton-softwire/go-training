@@ -9,6 +9,8 @@ var tests = []struct {
 	{"Alice", "Hello, Alice"},
 	{"Bob", "Hello, Bob"},
 	{"Robert Griesemer", "Hello, Robert Griesemer. Thanks for creating me!"},
+	{"Ken Thompson", "Hello, Ken Thompson. Thanks for creating me!"},
+	{"Rob Pike", "Hello, Rob Pike. Thanks for creating me!"},
 	{"aaaaaaaaaabbbbbbbbbba", "Hello, aaaaaaaaaabbbbbbbbbb... Wow, that name's too long for me!"},
 }
 
