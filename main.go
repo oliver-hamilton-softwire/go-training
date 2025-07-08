@@ -20,9 +20,12 @@ func main() {
 
 func greeting(name string) string {
 	greetingStr := "Hello, " + name
-	// Exercise 1
-	if name == "Robert Griesemer" {
-		greetingStr += ". Thanks for creating me!"
+	creators := []string{"Robert Griesemer", "Rob Pike", "Ken Thompson"}
+	// Exercise 1 & 3
+	for _, creator := range creators {
+		if name == creator {
+			greetingStr += ". Thanks for creating me!"
+		}
 	}
 	// Exercise 2
 	if len(name) > 20 {
