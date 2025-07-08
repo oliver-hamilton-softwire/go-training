@@ -15,7 +15,11 @@ func getName() string {
 
 func main() {
 	name := getName()
-	fmt.Println(greeting(name))
+	greetingStr := greeting(name)
+	if name == "Robert Griesemer" {
+		greetingStr += ". Thanks for creating me!"
+	}
+	fmt.Println(greetingStr)
 }
 
 func greeting(name string) string {
