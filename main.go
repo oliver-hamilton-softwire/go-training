@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func getName() string {
@@ -19,7 +20,10 @@ func main() {
 }
 
 func greeting(name string) string {
-	greetingStr := "Hello, " + name
+	// Exercise 4
+	splitString := strings.Split(name, " ")
+	firstName := splitString[0]
+	greetingStr := "Hello, " + firstName
 	creators := []string{"Robert Griesemer", "Rob Pike", "Ken Thompson"}
 	// Exercise 1 & 3
 	for _, creator := range creators {
@@ -28,8 +32,8 @@ func greeting(name string) string {
 		}
 	}
 	// Exercise 2
-	if len(name) > 20 {
-		greetingStr = "Hello, " + name[:20] + "... Wow, that name's too long for me!"
+	if len(firstName) > 20 {
+		greetingStr = "Hello, " + firstName[:20] + "... Wow, that name's too long for me!"
 	}
 	return greetingStr
 }
